@@ -1,6 +1,5 @@
-/*
-Сначала создадим матрицу и заполним ее некоторыми значениями, положим в таблицу Matrix.
-Также, добавим еще одну:
+п»ї/*
+РЎРЅР°С‡Р°Р»Р° СЃРѕР·РґР°РґРёРј РјР°С‚СЂРёС†Сѓ Рё Р·Р°РїРѕР»РЅРёРј РµРµ РЅРµРєРѕС‚РѕСЂС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё, РїРѕР»РѕР¶РёРј РІ С‚Р°Р±Р»РёС†Сѓ Matrix.
 */
 
 DROP TABLE [Matrix];
@@ -20,23 +19,17 @@ insert into [Matrix] (M_id, row_id, col_id, val) values (1, 1, 2, 2)
 insert into [Matrix] (M_id, row_id, col_id, val) values (1, 1, 3, 3)
 insert into [Matrix] (M_id, row_id, col_id, val) values (1, 2, 1, 4)
 insert into [Matrix] (M_id, row_id, col_id, val) values (1, 2, 2, 5)
-insert into [Matrix] (M_id, row_id, col_id, val) values (1, 2, 3, 6)
-insert into [Matrix] (M_id, row_id, col_id, val) values (2, 1, 1, 7)
-insert into [Matrix] (M_id, row_id, col_id, val) values (2, 1, 2, 8)
-insert into [Matrix] (M_id, row_id, col_id, val) values (2, 1, 3, 9)
-insert into [Matrix] (M_id, row_id, col_id, val) values (2, 2, 1, 10)
-insert into [Matrix] (M_id, row_id, col_id, val) values (2, 2, 2, 11)
-insert into [Matrix] (M_id, row_id, col_id, val) values (2, 2, 3, 12)
+insert into [Matrix] (M_id, row_id, col_id, val) values (1, 2, 3, 6);
 
 /*
-Объявим параметр, входящий в запрос:
+РћР±СЉСЏРІРёРј РїР°СЂР°РјРµС‚СЂ, РІС…РѕРґСЏС‰РёР№ РІ Р·Р°РїСЂРѕСЃ:
 */
 
 DECLARE @param as int
 SET @param = 1;
 
 /*
-Выведем исходный вид матрицы:
+Р’С‹РІРµРґРµРј РёСЃС…РѕРґРЅС‹Р№ РІРёРґ РјР°С‚СЂРёС†С‹:
 */
 
 SELECT *
@@ -45,7 +38,7 @@ WHERE M_id = @param
 ORDER BY row_id ASC, col_id ASC;
 
 /*
-Выведем транспонированный:
+Р’С‹РІРµРґРµРј С‚СЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРЅС‹Р№:
 */
 
 SELECT M_id, col_id AS row_id, row_id AS col_id, val
