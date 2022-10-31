@@ -108,7 +108,11 @@ ORDER BY Fare DESC;
 (Не понял смысл первого запроса..)
 */
 
-SELECT COUNT(*) AS [Количество строк с разными ценами], EMBARKED
+SELECT COUNT(*) AS [Количество строк с разными ценами, без группировки по портам]
+FROM (SELECT DISTINCT Fare
+FROM CSV_Export) AS T;
+
+SELECT COUNT(*) AS [Количество строк с разными ценами, с группировкой по портам], EMBARKED
 FROM 
 (SELECT DISTINCT Fare, EMBARKED
 FROM CSV_Export) AS T
